@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Space+Grotesk:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Quizzy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Space Grotesk"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101622] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="container mx-auto flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-xl font-bold">FlashMind</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">My Decks</a>
+<a class="hover:text-primary transition-colors" href="#">Create</a>
+<a class="hover:text-primary transition-colors" href="#">Study</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="hidden sm:flex items-center justify-center rounded-full h-10 px-4 text-sm font-bold bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="truncate">Sign In</span>
+</button>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBF658Lv3zHGGpZFRAYke7TFbvZ8f-DoeeKsIaFeoLMyfo7FKhAcBly7NsFJkMrQhd4iZ89Exex8RoNBL1FHq2eZyun-BBptRm-BwUMVgGvcaaygBzKIheZaPcFRwCz7KbAU1zbry3E3-sAxd0kHVX2COtqFRSz1IpIJFesnjIcxcUT16WKGlcAMGau8G3f1KJagswursX2XoWpR2EeBlwyQ6km6EkfTaowgTcBnqeakXJKB7uEPsfsBu4lGFBrIIXgLOQLuoMSoFw");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="container mx-auto px-4 sm:px-10 py-10 sm:py-20">
+<div class="flex flex-col items-center justify-center text-center">
+<div class="flex w-full flex-col gap-6 items-center justify-center rounded-xl bg-cover bg-center p-8 sm:p-16" style='background-image: linear-gradient(rgba(16, 22, 34, 0.5) 0%, rgba(16, 22, 34, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0TwUm09feER6EmX4Ae5an38yIr6A15SaT0Nxi4LP8GdlknZUumiEFFumloeTkr_Ab0-Um9FgYbRarRb70Ne3Mh4-8hs_Aa1p0he8SKbwmEwKlGpTAlgvaSt3REBWbRk0avTc9xtQZsD7gkgqcNHHfsK9vvADdJSJIDcwzU9_jsGdMTLLicN_ynZ5DK6Zx4fNKGljKNk4DK76zjLZCMkXB_Os_fINp022aTxVjKAz3kUvmdYtZd5vR72SqJAPvulvc793PI98iq8Y");'>
+<div class="flex flex-col gap-4 text-center text-white">
+<h1 class="text-4xl sm:text-6xl font-bold tracking-tight">Study Smarter with AI-Powered Flashcards</h1>
+<p class="text-base sm:text-lg max-w-2xl mx-auto text-white/80">
+                  Unlock your learning potential with FlashMind's innovative flashcard platform. Create, study, and master any subject with ease.
+                </p>
+</div>
+<button class="flex min-w-[84px] items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold transition-transform hover:scale-105">
+<span class="truncate">Get Started Free</span>
+</button>
+</div>
+<div class="w-full py-16 sm:py-24">
+<h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4 text-left p-6 rounded-lg bg-background-dark/5 dark:bg-white/5">
+<div class="w-full aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCN29rigX8EPu84YctCDU_7YbmxElzJmOOWRK6l1PKJVWNd7TxLUk35ABHfH7-94D7MaLyAvPu8I_dLZ6qwoDQgRI_1konyHMQL21wSSqNlLd_RAooZUBTFjKUHyWL5d2e0FXeIzAJc7_NB3v4PVE9ETYODFvVZC9mA7SFfR7tlJ4abloYKcrCKKpofAREtosBWosU9TWUonA6WlKdKdwhOrnldb40P91HUMftCsyp4IaA702ASYg1WQR-xacWucxp-KE_M7_mfg_I");'></div>
+<div>
+<p class="text-lg font-bold">AI Generation</p>
+<p class="text-sm text-[#101622]/60 dark:text-white/60">
+                      Generate flashcards instantly using AI. Simply input your topic and let our AI create comprehensive flashcards for you.
+                    </p>
+</div>
+</div>
+<div class="flex flex-col gap-4 text-left p-6 rounded-lg bg-background-dark/5 dark:bg-white/5">
+<div class="w-full aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABKTlOlKLrKowIHZjc1mgjwvjBb99iNwVfYeHv5KvdZi1CYnQodTSBOR1qHboYpvmJ5TM_8j4Xm4UJ3GQonkmWIBzZmfNPPK92wjsmEAayFDI1tEQilVUAhFYL9d4kxQTWdKhoTc0nUKT_Wd9ApF-X37HOzFh20BgcAjEXUZLf3iO73bhN0C5wxutWMvgt4aRAVrGWZXwqvq708XNyAa0U2i2ed-LlIqBOApQBgD4WesUz_mUeEgG8uAtJ9Pj7f-KuOPq2Jda5m9I");'></div>
+<div>
+<p class="text-lg font-bold">Document Upload</p>
+<p class="text-sm text-[#101622]/60 dark:text-white/60">
+                      Upload your documents and convert them into interactive flashcards. Supports various formats including PDF, DOCX, and more.
+                    </p>
+</div>
+</div>
+<div class="flex flex-col gap-4 text-left p-6 rounded-lg bg-background-dark/5 dark:bg-white/5">
+<div class="w-full aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANcKPm2YFIxNbs2G3uGkEUBpgRRAMc_94cMF0Uf2PjBDSl3P279A7me5BMoSSrToUZUQYPBIEBIpLg6OG8PZZy65n8IR59tq2lZ_cqwtXZECK05nlY99VfmVLRxNfXjTHbVzsLr_X0GGwMxa4rQMqP6vZN3euNd_dhZLSGJy_wr-fu3ZJ6muRDj1MW4TJXPPA7f94uTjypX7xRwkp1uDCt1LhgAnpShs7HEOeNcUdA9VI3pdA59Gr6czfyp7nCRtIKy1iKFvVOOkk");'></div>
+<div>
+<p class="text-lg font-bold">Instant Translation</p>
+<p class="text-sm text-[#101622]/60 dark:text-white/60">
+                      Translate flashcards into multiple languages with a single click. Expand your learning horizons and study in your preferred language.
+                    </p>
+</div>
+</div>
+<div class="flex flex-col gap-4 text-left p-6 rounded-lg bg-background-dark/5 dark:bg-white/5">
+<div class="w-full aspect-square rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0dOcwu3YvGwvgGsAbVYP6iVaMu1fKtkpNBns8mxwAtXO336Fs5s5uH575Nv38B6YCz6uF0MaACA61a09Ycfwf5TqD0Nf1wC3OP8Tjaf-OodeeQY0-inT3J2wqguT7TwVchGFOW3MmxLQYdi4Y0lhFWzpc8iOX8Cm-sURXw6VkC9DMpKSk2orLsti2-FCpr23Uc_idal_k9J8I-ownoPvtgk3fZfVQpm4e7IGX-q5LGXGH8_HVo3MUXtYxLk--_WFJkbW72syDSM8");'></div>
+<div>
+<p class="text-lg font-bold">Smart Study</p>
+<p class="text-sm text-[#101622]/60 dark:text-white/60">
+                      Our smart study mode adapts to your learning pace, focusing on areas where you need more practice. Maximize your study efficiency.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-6 text-center py-10 sm:py-20">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight max-w-2xl">Ready to Elevate Your Learning?</h2>
+<button class="flex min-w-[84px] items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold transition-transform hover:scale-105">
+<span class="truncate">Sign Up Now</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Quizzy Leaderboard</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Lexend"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Lexend', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10 border-b border-primary/20 dark:border-primary/30">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5V14H8v-2h3V9.5h2V12h3v2h-3v2.5h-2z"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">Quizzy</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Study</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Create</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Library</a>
+<a class="text-sm font-medium text-primary hover:text-primary/80" href="#">Upgrade</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary">
+<span class="material-symbols-outlined">
+                notifications
+              </span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuaR2E4AVFxm-le8SkS1rcfpm2m11fTGECJHYyEUviCJ9p17Gz30Xn0CnUlRmn26aYiIOeJ7FYfJ8CnfaxVsDi0BL1UiIkrDPGxsARIstD5wlNVjdCblaJ5_iGxwHF3mAnLM5p8pwkeCoQrhOMzmEnj_DVuArygq6BXfJbOcS9ksWMH3vDImLMVeCmVS3y_JjIonY2bohFiXbw_NRL5Tx-K9YXCXEQl-EFY-jeHoPkOz86pl05-V_MUtDVpdqFZFwobEvo8waaJxA");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-8">
+<h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Leaderboard</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Compete with your peers and climb the ranks by mastering flashcards and acing quizzes.</p>
+</div>
+<div class="flex justify-center mb-8">
+<div class="flex items-center gap-2 rounded-lg p-1 bg-gray-200/80 dark:bg-gray-800/80">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="leaderboard_filter" type="radio"/>
+<span class="px-4 py-2 rounded text-sm font-medium text-gray-600 dark:text-gray-400 peer-checked:bg-primary peer-checked:text-white transition-colors duration-300">This Week</span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="leaderboard_filter" type="radio"/>
+<span class="px-4 py-2 rounded text-sm font-medium text-gray-600 dark:text-gray-400 peer-checked:bg-primary peer-checked:text-white transition-colors duration-300">This Month</span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="leaderboard_filter" type="radio"/>
+<span class="px-4 py-2 rounded text-sm font-medium text-gray-600 dark:text-gray-400 peer-checked:bg-primary peer-checked:text-white transition-colors duration-300">All Time</span>
+</label>
+</div>
+</div>
+<div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-primary/20 dark:border-primary/30">
+<th class="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-white w-16 text-center">Rank</th>
+<th class="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-white">User</th>
+<th class="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-white text-right">Points</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10 dark:divide-primary/20">
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-yellow-400 text-white font-bold text-lg">1</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-10 w-10">
+<img alt="" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLS3XqAcEWOJ4riXEtsorWa5qdF0ZnkDJlxnZi3iNVMVdfkOqk3ksbPkk-V3srPGuWKBk4aOqnMvKyVMxh51Izurbb192W_fC8GwdUZZSVgA3VE8HESxNnSPAmQfywpYXcsJhc2S5-lbjKXN9WH8XRJ60uBcjCxI6maB-ML5a0wnAybq7Ll6z1UXsJspNjDZwA6GD_flhxsFVt34qiy7z8NzIxoYh-lob5fFVZ0r8RfsyQh65lKpmgOIMMPv4VJxLyU6Dx9iyNrQ"/>
+</div>
+<div class="text-sm font-medium text-gray-900 dark:text-white">Sophia Clark</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-semibold text-primary">1250</td>
+</tr>
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-200 font-bold text-lg">2</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-10 w-10">
+<img alt="" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLS3XqAcEWOJ4riXEtsorWa5qdF0ZnkDJlxnZi3iNVMVdfkOqk3ksbPkk-V3srPGuWKBk4aOqnMvKyVMxh51Izurbb192W_fC8GwdUZZSVgA3VE8HESxNnSPAmQfywpYXcsJhc2S5-lbjKXN9WH8XRJ60uBcjCxI6maB-ML5a0wnAybq7Ll6z1UXsJspNjDZwA6GD_flhxsFVt34qiy7z8NzIxoYh-lob5fFVZ0r8RfsyQh65lKpmgOIMMPv4VJxLyU6Dx9iyNrQ"/>
+</div>
+<div class="text-sm font-medium text-gray-900 dark:text-white">Ethan Miller</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">1180</td>
+</tr>
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-400 text-white font-bold text-lg">3</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-10 w-10">
+<img alt="" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLS3XqAcEWOJ4riXEtsorWa5qdF0ZnkDJlxnZi3iNVMVdfkOqk3ksbPkk-V3srPGuWKBk4aOqnMvKyVMxh51Izurbb192W_fC8GwdUZZSVgA3VE8HESxNnSPAmQfywpYXcsJhc2S5-lbjKXN9WH8XRJ60uBcjCxI6maB-ML5a0wnAybq7Ll6z1UXsJspNjDZwA6GD_flhxsFVt34qiy7z8NzIxoYh-lob5fFVZ0r8RfsyQh65lKpmgOIMMPv4VJxLyU6Dx9iyNrQ"/>
+</div>
+<div class="text-sm font-medium text-gray-900 dark:text-white">Olivia Davis</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">1120</td>
+</tr>
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+<td class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-400">4</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-10 w-10">
+<img alt="" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLS3XqAcEWOJ4riXEtsorWa5qdF0ZnkDJlxnZi3iNVMVdfkOqk3ksbPkk-V3srPGuWKBk4aOqnMvKyVMxh51Izurbb192W_fC8GwdUZZSVgA3VE8HESxNnSPAmQfywpYXcsJhc2S5-lbjKXN9WH8XRJ60uBcjCxI6maB-ML5a0wnAybq7Ll6z1UXsJspNjDZwA6GD_flhxsFVt34qiy7z8NzIxoYh-lob5fFVZ0r8RfsyQh65lKpmgOIMMPv4VJxLyU6Dx9iyNrQ"/>
+</div>
+<div class="text-sm font-medium text-gray-900 dark:text-white">Noah Wilson</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">1050</td>
+</tr>
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+<td class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-400">5</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-10 w-10">
+<img alt="" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLS3XqAcEWOJ4riXEtsorWa5qdF0ZnkDJlxnZi3iNVMVdfkOqk3ksbPkk-V3srPGuWKBk4aOqnMvKyVMxh51Izurbb192W_fC8GwdUZZSVgA3VE8HESxNnSPAmQfywpYXcsJhc2S5-lbjKXN9WH8XRJ60uBcjCxI6maB-ML5a0wnAybq7Ll6z1UXsJspNjDZwA6GD_flhxsFVt34qiy7z8NzIxoYh-lob5fFVZ0r8RfsyQh65lKpmgOIMMPv4VJxLyU6Dx9iyNrQ"/>
+</div>
+<div class="text-sm font-medium text-gray-900 dark:text-white">Ava Martinez</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">980</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

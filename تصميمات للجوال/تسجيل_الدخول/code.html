@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="dark" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy - تسجيل الدخول</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display flex items-center justify-center min-h-screen">
+<div class="w-full max-w-md p-8 space-y-8">
+<div class="text-center">
+<h1 class="text-3xl font-bold text-black dark:text-white">Quizzy</h1>
+<h2 class="mt-2 text-2xl font-bold text-black dark:text-white">مرحباً بعودتك</h2>
+<p class="mt-2 text-sm text-black/60 dark:text-white/60">سجل الدخول للمتابعة</p>
+</div>
+<form action="#" class="mt-8 space-y-6" method="POST">
+<div class="space-y-4 rounded-lg">
+<div>
+<label class="sr-only" for="email-address">البريد الإلكتروني</label>
+<input autocomplete="email" class="relative block w-full appearance-none rounded-lg border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark px-3 py-4 text-black dark:text-white placeholder-black/40 dark:placeholder-white/40 focus:z-10 focus:border-primary focus:outline-none focus:ring-primary sm:text-sm" id="email-address" name="email" placeholder="البريد الإلكتروني" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">كلمة المرور</label>
+<input autocomplete="current-password" class="relative block w-full appearance-none rounded-lg border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark px-3 py-4 text-black dark:text-white placeholder-black/40 dark:placeholder-white/40 focus:z-10 focus:border-primary focus:outline-none focus:ring-primary sm:text-sm" id="password" name="password" placeholder="كلمة المرور" required="" type="password"/>
+</div>
+</div>
+<div>
+<button class="group relative flex w-full justify-center rounded-lg border border-transparent bg-primary py-3 px-4 text-base font-medium text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
+                تسجيل الدخول
+            </button>
+</div>
+<div class="relative flex items-center justify-center">
+<div class="w-full border-t border-black/10 dark:border-white/10"></div>
+<div class="absolute bg-background-light dark:bg-background-dark px-2 text-sm text-black/60 dark:text-white/60">
+                أو
+            </div>
+</div>
+<div>
+<button class="group relative flex w-full items-center justify-center rounded-lg border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-primary/10 dark:hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+<svg class="h-5 w-5 mr-2" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107"></path><path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00"></path><path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.222 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50"></path><path d="M43.611 20.083H24v8h19.611c.34-1.73.539-3.47.539-5.259c0-1.789-.199-3.529-.539-5.259z" fill="#1976D2"></path>
+</svg>
+                تسجيل الدخول باستخدام جوجل
+            </button>
+</div>
+</form>
+<div class="text-center text-sm">
+<p class="text-black/60 dark:text-white/60">
+            ليس لديك حساب؟
+            <a class="font-medium text-primary hover:underline" href="#">أنشئ حساباً</a>
+</p>
+</div>
+</div>
+
+</body></html>

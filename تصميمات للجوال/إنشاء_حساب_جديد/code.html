@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="dark" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy - إنشاء حساب</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark">
+<button class="text-gray-800 dark:text-white">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+</button>
+<h1 class="text-lg font-bold text-gray-900 dark:text-white flex-1 text-center pr-6">إنشاء حساب</h1>
+</header>
+<main class="flex-grow flex flex-col justify-center px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-md mx-auto space-y-6">
+<div>
+<label class="sr-only" for="full-name">الاسم الكامل</label>
+<input class="form-input block w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800 h-14 px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary" id="full-name" name="full-name" placeholder="الاسم الكامل" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="email">البريد الإلكتروني</label>
+<input class="form-input block w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800 h-14 px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary" id="email" name="email" placeholder="البريد الإلكتروني" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">كلمة السر</label>
+<input class="form-input block w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800 h-14 px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary" id="password" name="password" placeholder="كلمة السر" type="password"/>
+</div>
+<div class="pt-2">
+<button class="flex w-full justify-center rounded-lg bg-primary px-5 py-4 text-base font-bold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" type="submit">
+            إنشاء حساب
+          </button>
+</div>
+<p class="text-center text-sm text-gray-600 dark:text-gray-400">
+          هل لديك حساب بالفعل؟
+          <a class="font-medium text-primary hover:underline" href="#">تسجيل الدخول</a>
+</p>
+</div>
+</main>
+<footer class="flex-shrink-0">
+<div class="w-full h-48 bg-contain bg-no-repeat bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXqQ2SuYd2csuL_FQIjK_SG6y04TukgWi4Yt3p4JouzC7TjVt3nJIWDDZM5OQWdlgRYzc0ownTPaqQrn7_vUS1TPOvs55DplZvx8Bt-SVJPMJ57qLdpEfP-3_KKvz59EVs5RdJnLDPP5mDgwPh7ITaoSY75v8dKDSIasnYAkDaRufPZfU9q4vn-J_TU294Tw-48V77-I5rUK96z9r9Hsml1_x18Tjrdr-HqCOJY3ctFXKMeZ3aGRXN-I2uAj5jwp7XBhZXGSDdqhU')"></div>
+</footer>
+</div>
+
+</body></html>

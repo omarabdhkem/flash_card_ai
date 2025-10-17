@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy - Study Smarter with AI-Powered Flashcards</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3b82f6", // A vibrant blue
+                        "background-light": "#fdfaf6", // An off-white, warm color
+                        "background-dark": "#121212", // A deep, dark gray
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e1e1e",
+                        "text-light": "#1f2937",
+                        "text-dark": "#e5e7eb",
+                        "subtext-light": "#6b7280",
+                        "subtext-dark": "#9ca3af",
+                    },
+                    fontFamily: {
+                        display: ["Cairo", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+                        'subtle-glow': 'subtle-glow 3s ease-in-out infinite alternate',
+                        'glitch': 'glitch 1.5s linear infinite'
+                    },
+                    keyframes: {
+                        'fade-in-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'subtle-glow': {
+                            '0%': {
+                                boxShadow: '0 0 5px rgba(59, 130, 246, 0.2), 0 0 10px rgba(59, 130, 246, 0.1)'
+                            },
+                            '100%': {
+                                boxShadow: '0 0 15px rgba(59, 130, 246, 0.4), 0 0 25px rgba(59, 130, 246, 0.2)'
+                            }
+                        },
+                        'glitch': {
+                            '2%, 64%': { transform: 'translate(2px, 0) skew(0deg)' },
+                            '4%, 60%': { transform: 'translate(-2px, 0) skew(0deg)' },
+                            '62%': { transform: 'translate(0, 0) skew(5deg)' }
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .glitch-effect:before,
+        .glitch-effect:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fdfaf6;
+            overflow: hidden;
+        }
+        .dark .glitch-effect:before,
+        .dark .glitch-effect:after {
+            background: #121212;
+        }
+        .glitch-effect:before {
+            left: 2px;
+            text-shadow: -2px 0 #ef4444;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        .glitch-effect:after {
+            left: -2px;
+            text-shadow: -2px 0 #3b82f6, 2px 2px #facc15;
+            clip: rect(86px, 450px, 100px, 0);
+            animation: glitch 1.5s infinite linear alternate-reverse;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark transition-colors duration-500">
+<div id="root">
+<div class="bg-blue-600 text-white text-center p-2 text-sm">
+            هذه معاينة مؤقتة للتطوير، وهذه الروابط ليست للاستخدام العام. <a class="font-bold underline" href="#">انشر تطبيقك</a> لتأمين المشاركة أو استخدام رابط الدعوة.
+            <button class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white">
+<span class="material-icons">close</span>
+</button>
+</div>
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a class="text-3xl font-black text-primary glitch-effect" data-text="Quizzy" href="#">Quizzy</a>
+<div class="hidden md:flex items-center space-x-8 text-lg">
+<a class="hover:text-primary transition-colors duration-300" href="#">مجموعاتي</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">إنشاء</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">دراسة</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" id="theme-toggle">
+<span class="material-icons dark:hidden">dark_mode</span>
+<span class="material-icons hidden dark:inline">light_mode</span>
+</button>
+<a class="bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 animate-subtle-glow" href="#">تسجيل الدخول</a>
+</div>
+</nav>
+</header>
+<main class="overflow-x-hidden">
+<section class="relative h-screen flex items-center justify-center text-center -mt-[80px] pt-[80px]">
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-10 dark:opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAS5V-e6ilpHNYQeqE0rscJclIMexjkqyLOD4nuodot5rY3tenPjzfoVYSlUcPnoVUY2exEkyofMgp_hrClXvla1LMjBxzAbMpdPEGzzebfEDJoP_U5hq-RvI_agSGKzqs1h0XHZL30zgZn0kpw39SCGj8xnOC7g0n2StKxohiApM2VQ-SwAwwP4ti6ankhglj0j2P1XpkslcD9iX7harAs4JHSbIt9DPFI47EFv2cIt4twhbiIZSXivYtM-Whu2dzeRyDDYYIIlk');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-light via-transparent to-transparent dark:from-background-dark z-10"></div>
+<div class="container mx-auto px-6 z-20">
+<div class="max-w-4xl mx-auto">
+<h1 class="text-5xl md:text-7xl font-black mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">
+                            ادرس بذكاء أكبر مع بطاقات
+                            <span class="relative inline-block">
+<span class="glitch-effect" data-text="الذكاء الاصطناعي">الذكاء الاصطناعي</span>
+</span>
+</h1>
+<p class="text-lg md:text-xl max-w-2xl mx-auto text-subtext-light dark:text-subtext-dark mb-10 animate-fade-in-up" style="animation-delay: 0.4s;">
+                            حوّل ملاحظاتك وملفات PDF وأفكارك إلى بطاقات تعليمية تفاعلية. ترجم فورًا، وادرس في أي مكان، وتفوق في امتحاناتك باستخدام أدوات التعلم المتقدمة.
+                        </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+<a class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 animate-subtle-glow" href="#">
+<span class="material-icons">rocket_launch</span>
+                                ابدأ مجانًا
+                            </a>
+<a class="w-full sm:w-auto bg-card-light dark:bg-card-dark border border-gray-300 dark:border-gray-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105" href="#">
+                                تعلم المزيد
+                            </a>
+</div>
+</div>
+<div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto animate-fade-in-up" style="animation-delay: 0.8s;">
+<div class="bg-card-light/50 dark:bg-card-dark/50 backdrop-blur-sm p-4 rounded-lg flex items-center gap-4 border border-gray-200 dark:border-gray-800">
+<span class="material-icons text-primary text-3xl">auto_awesome</span>
+<div>
+<h3 class="font-bold">إنشاء بالذكاء الاصطناعي</h3>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">أنشئ بطاقات من أي موضوع فورًا.</p>
+</div>
+</div>
+<div class="bg-card-light/50 dark:bg-card-dark/50 backdrop-blur-sm p-4 rounded-lg flex items-center gap-4 border border-gray-200 dark:border-gray-800">
+<span class="material-icons text-primary text-3xl">upload_file</span>
+<div>
+<h3 class="font-bold">رفع المستندات</h3>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">حوّل ملفات PDF و Word إلى بطاقات.</p>
+</div>
+</div>
+<div class="bg-card-light/50 dark:bg-card-dark/50 backdrop-blur-sm p-4 rounded-lg flex items-center gap-4 border border-gray-200 dark:border-gray-800">
+<span class="material-icons text-primary text-3xl">translate</span>
+<div>
+<h3 class="font-bold">ترجمة فورية</h3>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">ادعم العربية، الإنجليزية، و+20 لغة.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-32">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-4xl md:text-5xl font-black mb-4">كل ما تحتاجه للتفوق</h2>
+<p class="text-lg md:text-xl max-w-3xl mx-auto text-subtext-light dark:text-subtext-dark mb-16">
+                        ميزات قوية مصممة خصيصًا لطلاب الجامعات لتعزيز تجربتهم التعليمية.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl border border-gray-200 dark:border-gray-800 text-right transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-primary/20">
+<div class="p-4 inline-block bg-primary/10 rounded-lg mb-6">
+<span class="material-icons text-primary text-4xl">auto_awesome</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">إنشاء بالذكاء الاصطناعي</h3>
+<p class="text-subtext-light dark:text-subtext-dark">أنشئ بطاقات تعليمية من أي موضوع. فقط صف ما تدرسه ودع الذكاء الاصطناعي في Quizzy ينشئ البطاقات لك.</p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl border border-gray-200 dark:border-gray-800 text-right transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-primary/20">
+<div class="p-4 inline-block bg-primary/10 rounded-lg mb-6">
+<span class="material-icons text-primary text-4xl">description</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">رفع المستندات</h3>
+<p class="text-subtext-light dark:text-subtext-dark">حوّل ملفات PDF و Word و PowerPoint و+20 صيغة أخرى إلى بطاقات تعليمية تفاعلية تلقائيًا.</p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl border border-gray-200 dark:border-gray-800 text-right transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-primary/20">
+<div class="p-4 inline-block bg-primary/10 rounded-lg mb-6">
+<span class="material-icons text-primary text-4xl">g_translate</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">ترجمة فورية</h3>
+<p class="text-subtext-light dark:text-subtext-dark">ترجم البطاقات بين العربية والإنجليزية و+20 لغة أخرى بنقرة واحدة. مثالي لمتعلمي اللغات.</p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl border border-gray-200 dark:border-gray-800 text-right transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-primary/20">
+<div class="p-4 inline-block bg-primary/10 rounded-lg mb-6">
+<span class="material-icons text-primary text-4xl">school</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">دراسة ذكية</h3>
+<p class="text-subtext-light dark:text-subtext-dark">خوارزميات تعلم تكيّفية تحلل أداءك وتحسّن جلسات دراستك لتحقيق استيعاب أفضل.</p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl border border-gray-200 dark:border-gray-800 text-right transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-primary/20">
+<div class="p-4 inline-block bg-primary/10 rounded-lg mb-6">
+<span class="material-icons text-primary text-4xl">sync</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">مزامنة عبر الأجهزة</h3>
+<p class="text-subtext-light dark:text-subtext-dark">ادرس على هاتفك أو جهازك اللوحي أو حاسوبك. تتم مزامنة تقدمك تلقائيًا في كل مكان.</p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl border border-gray-200 dark:border-gray-800 text-right transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-primary/20">
+<div class="p-4 inline-block bg-primary/10 rounded-lg mb-6">
+<span class="material-icons text-primary text-4xl">summarize</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">ملخصات بالذكاء الاصطناعي</h3>
+<p class="text-subtext-light dark:text-subtext-dark">احصل على ملخصات لموادك الدراسية تم إنشاؤها بواسطة الذكاء الاصطناعي لمراجعة المفاهيم الأساسية قبل الامتحانات.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-32 bg-card-light dark:bg-card-dark">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-4xl md:text-5xl font-black mb-4">جاهز لتحويل دراستك؟</h2>
+<p class="text-lg md:text-xl max-w-3xl mx-auto text-subtext-light dark:text-subtext-dark mb-10">
+                        انضم إلى آلاف الطلاب الجامعيين الذين يدرسون بالفعل بشكل أكثر ذكاءً مع Quizzy.
+                    </p>
+<a class="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 animate-subtle-glow" href="#">
+<span class="material-icons">add_circle</span>
+                        أنشئ مجموعتك الأولى
+                    </a>
+</div>
+</section>
+</main>
+<script>
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+        </script>
+</div>
+
+</body></html>

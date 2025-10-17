@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy - منصة البطاقات التعليمية الذكية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3b82f6",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#0d1117",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#161b22",
+                        "text-light": "#212529",
+                        "text-dark": "#c9d1d9",
+                        "text-secondary-light": "#6c757d",
+                        "text-secondary-dark": "#8b949e",
+                        "border-light": "#dee2e6",
+                        "border-dark": "#30363d",
+                    },
+                    fontFamily: {
+                        display: ["Cairo", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .rtl {
+            direction: rtl;
+        }
+        .ltr {
+            direction: ltr;
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
+        }
+        .glitch-effect {
+            animation: glitch 1s linear infinite;
+        }
+        @keyframes glitch{
+            2%,64%{
+                transform: translate(2px,0) skew(0deg);
+            }
+            4%,60%{
+                transform: translate(-2px,0) skew(0deg);
+            }
+            62%{
+                transform: translate(0,0) skew(5deg); 
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 rtl">
+<div class="overflow-x-hidden" id="app">
+<header class="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+<nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 rtl:space-x-reverse" href="#">
+<span class="text-2xl font-bold text-primary">Quizzy</span>
+<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895.356-1.75.988-2.386l.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="hidden md:flex items-center space-x-6 rtl:space-x-reverse text-sm font-semibold">
+<a class="text-text-light dark:text-text-dark hover:text-primary transition-colors" href="#">مجموعاتي</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary transition-colors" href="#">إنشاء</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary transition-colors" href="#">دراسة</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary transition-colors" href="#">المتصدرون</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary transition-colors" href="#">الدردشة</a>
+</div>
+</div>
+<div class="flex items-center space-x-4 rtl:space-x-reverse">
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5" id="theme-toggle" type="button">
+<span class="material-icons dark:hidden">light_mode</span>
+<span class="material-icons hidden dark:inline">dark_mode</span>
+</button>
+<a class="px-4 py-2 text-sm font-semibold bg-primary text-white rounded-lg shadow-md hover:bg-blue-600 transition-all transform hover:scale-105" href="#">تسجيل الدخول</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+<h1 class="text-4xl md:text-6xl font-extrabold text-text-light dark:text-text-dark mb-4 leading-tight">
+                ادرس بذكاء أكبر مع <br/>
+<span class="text-primary glitch-effect">بطاقات الذكاء الاصطناعي</span>
+</h1>
+<p class="max-w-3xl mx-auto text-lg text-text-secondary-light dark:text-text-secondary-dark mb-8">
+                حوّل ملاحظاتك وملفات PDF وأفكارك إلى بطاقات تعليمية تفاعلية. ترجم فوراً، وادرس في أي مكان، وتفوق في امتحاناتك باستخدام أدوات التعلم المتقدمة.
+            </p>
+<div class="flex justify-center items-center space-x-4 rtl:space-x-reverse">
+<a class="inline-flex items-center justify-center px-8 py-3 text-lg font-bold text-white bg-primary rounded-lg shadow-lg hover:bg-blue-600 transition-all transform hover:scale-105 glow-effect" href="#">
+<span class="material-icons mr-2 rtl:ml-2">rocket_launch</span>
+                    ابدأ مجاناً
+                </a>
+<a class="inline-flex items-center justify-center px-8 py-3 text-lg font-bold text-primary dark:text-blue-400 bg-surface-light dark:bg-surface-dark border border-primary dark:border-blue-400 rounded-lg shadow-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all" href="#features">
+                    تعلم المزيد
+                </a>
+</div>
+<div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto text-right">
+<div class="flex items-center space-x-3 rtl:space-x-reverse p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full">
+<span class="material-icons text-primary">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-semibold text-text-light dark:text-text-dark">إنشاء بالذكاء الاصطناعي</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">أنشئ بطاقات من أي موضوع فورًا.</p>
+</div>
+</div>
+<div class="flex items-center space-x-3 rtl:space-x-reverse p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+<div class="p-2 bg-green-100 dark:bg-green-900/50 rounded-full">
+<span class="material-icons text-green-500">upload_file</span>
+</div>
+<div>
+<h3 class="font-semibold text-text-light dark:text-text-dark">رفع المستندات</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">حوّل ملفات PDF و Word إلى بطاقات.</p>
+</div>
+</div>
+<div class="flex items-center space-x-3 rtl:space-x-reverse p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+<div class="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-full">
+<span class="material-icons text-purple-500">translate</span>
+</div>
+<div>
+<h3 class="font-semibold text-text-light dark:text-text-dark">ترجمة فورية</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">ادعم العربية، الإنجليزية و20+ لغة.</p>
+</div>
+</div>
+</div>
+</main>
+<section class="py-16 md:py-24 bg-gray-50 dark:bg-background-dark" id="features">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">كل ما تحتاجه للتفوق</h2>
+<p class="mt-4 text-lg text-text-secondary-light dark:text-text-secondary-dark">ميزات قوية مصممة خصيصاً لطلاب الجامعات لتعزيز تجربتهم التعليمية.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900/50 mb-6">
+<span class="material-icons text-3xl text-primary">auto_awesome</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-text-light dark:text-text-dark">إنشاء بالذكاء الاصطناعي</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">أنشئ بطاقات تعليمية من أي موضوع، فقط صف ما تريد وسيقوم الذكاء الاصطناعي في Quizzy بإنشاء البطاقات لك.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900/50 mb-6">
+<span class="material-icons text-3xl text-green-500">upload_file</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-text-light dark:text-text-dark">رفع المستندات</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">حوّل ملفات PDF, Word, و PowerPoint و20+ صيغة أخرى إلى بطاقات تعليمية تفاعلية قابلة للبحث.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900/50 mb-6">
+<span class="material-icons text-3xl text-purple-500">translate</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-text-light dark:text-text-dark">ترجمة فورية</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">ترجم البطاقات بين العربية والإنجليزية و20+ لغة أخرى. مترجم واسع عالي المستوى للغات.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-100 dark:bg-yellow-900/50 mb-6">
+<span class="material-icons text-3xl text-yellow-500">school</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-text-light dark:text-text-dark">دراسة ذكية</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">نظام مراجعة متكرر بتقنية اختبار أداء وتحسين جلسات دراستك لتحقيق استيعاب أفضل.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 dark:bg-indigo-900/50 mb-6">
+<span class="material-icons text-3xl text-indigo-500">sync</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-text-light dark:text-text-dark">مزامنة عبر الأجهزة</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">سواء كنت تستخدم هاتفك، جهازك اللوحي، أو حاسوبك، تتم مزامنة تقدمك تلقائيًا في كل مكان.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-red-100 dark:bg-red-900/50 mb-6">
+<span class="material-icons text-3xl text-red-500">summarize</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-text-light dark:text-text-dark">ملخصات بالذكاء الاصطناعي</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">احصل على ملخصات دقيقة لموادك يتم إنشاؤها بواسطة الذكاء الاصطناعي لمراجعة المفاهيم الأساسية قبل الامتحانات.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light dark:bg-background-dark py-16 md:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primary/10 dark:bg-primary/20 p-12 rounded-xl text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">جاهز لتحويل دراستك؟</h2>
+<p class="mt-4 mb-8 text-lg text-text-secondary-light dark:text-text-secondary-dark">
+                        انضم إلى آلاف الطلاب الجامعيين الذين يدرسون بالفعل بشكل أكثر ذكاءً مع Quizzy.
+                    </p>
+<a class="inline-flex items-center justify-center px-8 py-3 text-lg font-bold text-white bg-primary rounded-lg shadow-lg hover:bg-blue-600 transition-all transform hover:scale-105 glow-effect" href="#">
+<span class="material-icons mr-2 rtl:ml-2">group_add</span>
+                        أنشئ مجموعتك الأولى
+                    </a>
+</div>
+</div>
+</section>
+</div>
+<script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        // Set initial theme based on user preference or system setting
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+        themeToggle.addEventListener('click', function() {
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+
+</body></html>

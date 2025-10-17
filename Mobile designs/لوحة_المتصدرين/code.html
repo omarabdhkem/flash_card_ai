@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<title>Quizzy - Leaderboard</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center justify-between p-4 border-b border-primary/20 dark:border-primary/30">
+<button class="text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">
+            arrow_back_ios_new
+          </span>
+</button>
+<h1 class="text-lg font-bold text-slate-900 dark:text-white">Leaderboard</h1>
+<div class="w-8"></div>
+</div>
+<nav class="flex justify-around border-b border-primary/20 dark:border-primary/30">
+<a class="w-full py-3 text-center text-sm font-bold text-primary border-b-2 border-primary" href="#">This Week</a>
+<a class="w-full py-3 text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">This Month</a>
+<a class="w-full py-3 text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">All Time</a>
+</nav>
+</header>
+<main class="flex-grow p-4 space-y-2">
+<div class="flex items-end justify-center gap-2 sm:gap-4 my-6 text-center">
+<div class="flex flex-col items-center">
+<div class="relative">
+<img alt="Sarah's profile picture" class="w-16 h-16 rounded-full border-4 border-slate-300 dark:border-slate-500 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsreDPvj3T3yY-jhG6x0yHKKI9sJCWdxrL2bCK9VeFhya0Xzf2FLKc7zlkigSaztD7qkkhbaGHkimgiz1N0mKLW0bo6PeBnPbvgihmRWZcyXNO-ej2i5X27JBSYLCn7k_wbTxRDeUB7n7FSsmr7QMllLz4So6mEsp9eOhnx-PsD_H1ufdYnIsvlVRELTkfZmbaKS2-ZoOPgrO8JdzjEHNyZc4-G5uA8x4JJjaqad9fHjjp25GF0VMSoC6Kh3IZ8cVlRmV7lVjQGjg"/>
+<div class="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 bg-slate-300 dark:bg-slate-500 rounded-full text-sm font-bold text-slate-700 dark:text-white">2</div>
+</div>
+<p class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Sarah</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">1150 pts</p>
+</div>
+<div class="flex flex-col items-center mx-2">
+<span class="material-symbols-outlined text-4xl text-yellow-400 mb-1">workspace_premium</span>
+<div class="relative">
+<img alt="Alex's profile picture" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEkGuy2lvIj6M3FDOqmjQ7la4N0Cpu8UJRiuRienGVXmLmt0d2JT9fjwcXrjVM8PtqKaYOQrA18YaIWKgNnM4c65ubhEy-Xz1zczRNcT7FLtJ-77KFtSXzgmtGmZmUDt8d02oMq5TcaQ_rH_sAVip1DKiTdEizT8fnbrzzaY1YF_6dXIpn29i9eUv2nPSTLB8q_UPboeCtQFS158FFWuh0QaYc3gir8aw-q70WWrTxo3qZ-V0XQ1Ueo2xHwtOxssLYJeVzgJSdUis"/>
+<div class="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full text-sm font-bold text-white">1</div>
+</div>
+<p class="mt-2 text-base font-bold text-slate-900 dark:text-white">Alex</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1200 pts</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="relative">
+<img alt="David's profile picture" class="w-16 h-16 rounded-full border-4 border-orange-400 dark:border-orange-500 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HgWfQhBTruLi7yIiKlhSjZ7nY5RuQYROC7yU5LVKE4h9VwWJfCIz8r9NUDfXsv7v3rI3XDXn-wccALZAMFbavRJ8SHdUWQdW3HQZzVBSddkiTFiJ4NySJAoA5i3fQ1m8Fiz7WKs4-wVf13uJtkSMw2Iq1PghEJvt4H7NC0D7NaweFFMqMhXBWVdsUn4GCIyxB4e9eHbljYaRsrOHdGv6KxN6DqttEK0da4exDG6FqsgRG65X_WjA4jzHfwyDEi3k_M1xD1dhc0s"/>
+<div class="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 bg-orange-400 dark:bg-orange-500 rounded-full text-sm font-bold text-white">3</div>
+</div>
+<p class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">David</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">1100 pts</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-3 rounded-lg shadow-sm">
+<p class="w-6 text-center font-bold text-slate-500 dark:text-slate-400">4</p>
+<img alt="Emily's profile picture" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcQAz5Cax_1c-9kTneQgFG_KpLK3kyDlfQdIHgQGeg2zrCPE-Ez0xn-9QK2ygIhgMybEyAPlzz3rv5dvThpHPdnsAmGF1OI6xWVRg_nqOl5bpmKkjMbQt0dwx7YVh9yY0vbkIjOlgK6pg_5MPUtYzL_vkRwhym3dPHfOHi5QWTUbL_ieti0obc5-bZ87ByPFtl-xqzZNtguK3E4GTl6TlHLgFr36M8gV8LiI3z1tg2eJbXS-YJZg0CsXC1WUWqKGq93-igQc82W-s"/>
+<div class="flex-grow">
+<p class="font-semibold text-slate-800 dark:text-white">Emily</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1050 points</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-3 rounded-lg shadow-sm">
+<p class="w-6 text-center font-bold text-slate-500 dark:text-slate-400">5</p>
+<img alt="Michael's profile picture" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Ij1IltuhHQ6EfoEYC-wFBmZxvRS8_41DC1LCtSlXhFd6dW-o2xT2Eq7rxUkzDwd2nS-hRKP7DJ2T48en31Umk9hB1DkjHbMz7tH_fznzfPI91VLkshG2yvcIGw1Nf2SbVtOaKnJtlwUinFO8kRe3uJjkl4wEfw9YYSzOWMX41nOT9-0VEaLq5oj8435Cyp_Q8Hq4dFoTuYuYwZHxySO-iD2VO4RipRm4aO-ivotfV0BJ1JCbIEqx9BY6GKjO6_Dvjk68keZrM9o"/>
+<div class="flex-grow">
+<p class="font-semibold text-slate-800 dark:text-white">Michael</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1000 points</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-primary/20 dark:border-primary/30">
+<nav class="flex justify-around items-start pt-2 pb-3">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="text-xs font-medium">My Decks</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-xs font-medium">Create</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-xs font-medium">Study</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-xs font-bold">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>
