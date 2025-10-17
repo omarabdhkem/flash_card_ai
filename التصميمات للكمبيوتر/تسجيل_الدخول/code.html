@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy - تسجيل الدخول</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Space Grotesk"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      body {
+        direction: rtl;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen flex-col">
+<header class="w-full">
+<div class="container mx-auto flex items-center justify-between p-4 md:px-6">
+<a class="flex items-center gap-3" href="#">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">Quizzy</h1>
+</a>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">الرئيسية</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">المميزات</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">الأسعار</a>
+</nav>
+</div>
+</header>
+<main class="flex flex-1 items-center justify-center py-12 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<div>
+<h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">أهلاً بعودتك</h2>
+<p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+              سجل الدخول للمتابعة إلى Quizzy
+            </p>
+</div>
+<form action="#" class="mt-8 space-y-6" method="POST">
+<div class="space-y-4 rounded-lg shadow-sm">
+<div>
+<label class="sr-only" for="email-address">البريد الإلكتروني</label>
+<input autocomplete="email" class="relative block w-full appearance-none rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark px-3 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:z-10 focus:border-primary focus:outline-none focus:ring-primary sm:text-sm" id="email-address" name="email" placeholder="البريد الإلكتروني" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">كلمة المرور</label>
+<input autocomplete="current-password" class="relative block w-full appearance-none rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark px-3 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:z-10 focus:border-primary focus:outline-none focus:ring-primary sm:text-sm" id="password" name="password" placeholder="كلمة المرور" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-primary focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="mr-2 block text-sm text-gray-900 dark:text-gray-300" for="remember-me">تذكرني</label>
+</div>
+<div class="text-sm">
+<a class="font-medium text-primary hover:text-primary/80" href="#">نسيت كلمة المرور؟</a>
+</div>
+</div>
+<div>
+<button class="group relative flex w-full justify-center rounded-lg border border-transparent bg-primary px-4 py-3 text-sm font-medium text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark" type="submit">
+                تسجيل الدخول
+              </button>
+</div>
+<div class="relative">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-300 dark:border-gray-700"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="bg-background-light dark:bg-background-dark px-2 text-gray-500 dark:text-gray-400">أو</span>
+</div>
+</div>
+<div>
+<a class="group relative flex w-full items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark" href="#">
+<svg aria-hidden="true" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.0001 4.75003C12.3811 4.75003 12.75 5.0811 12.75 5.46203V7.12353H14.4115C14.7924 7.12353 15.1235 7.4546 15.1235 7.83553V9.49703C15.1235 9.87796 14.7924 10.209 14.4115 10.209H12.75V11.8705C12.75 12.2515 12.3811 12.5825 12.0001 12.5825C11.6191 12.5825 11.2501 12.2515 11.2501 11.8705V10.209H9.58855C9.20762 10.209 8.87655 9.87796 8.87655 9.49703V7.83553C8.87655 7.4546 9.20762 7.12353 9.58855 7.12353H11.2501V5.46203C11.2501 5.0811 11.6191 4.75003 12.0001 4.75003Z M12.0001 2.25003C9.0796 2.25003 6.75 4.5796 6.75 7.50003V9.49703H4.5C3.11929 9.49703 2 10.6163 2 12.0005V19.5C2 20.8807 3.11929 22 4.5 22H19.5C20.8807 22 22 20.8807 22 19.5V12.0005C22 10.6163 20.8807 9.49703 19.5 9.49703H17.25V7.50003C17.25 4.5796 14.9204 2.25003 12.0001 2.25003Z M12.0001 3.75003C14.0711 3.75003 15.75 5.42896 15.75 7.50003V9.49703H8.25V7.50003C8.25 5.42896 9.92893 3.75003 12.0001 3.75003Z M3.5 12.0005C3.5 11.1716 4.17157 10.997 4.5 10.997H19.5C19.8284 10.997 20.5 11.1716 20.5 12.0005V19.5C20.5 20.3284 19.8284 20.5 19.5 20.5H4.5C4.17157 20.5 3.5 20.3284 3.5 19.5V12.0005Z" fill-rule="evenodd"></path>
+<path d="M12 14.25C13.2426 14.25 14.25 15.2574 14.25 16.5C14.25 17.7426 13.2426 18.75 12 18.75C10.7574 18.75 9.75 17.7426 9.75 16.5C9.75 15.2574 10.7574 14.25 12 14.25Z"></path>
+</svg>
+                تسجيل الدخول باستخدام جوجل
+              </a>
+</div>
+</form>
+<p class="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+            ليس لديك حساب؟
+            <a class="font-medium text-primary hover:text-primary/80" href="#">انشئ حسابك الآن</a>
+</p>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div class="flex-grow">
+<header class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark">
+<button class="text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-xl font-bold text-slate-900 dark:text-white pr-8">Study</h1>
+</header>
+<main class="p-4 space-y-6">
+<div class="relative aspect-[3/2] w-full rounded-xl bg-cover bg-center flex flex-col justify-end overflow-hidden" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoVr0yRH4RhM1BmVDXugRxNIHTG9HzRHfMNDr6Q3YR4RWcV6l1P4kTBBfiRJgVLIcOX_MsuGdO8YhdC_QU8InEx2CgTwmkaN3lsyp74ZX5eN-TUiE8lvmQhvaa4r83g1D16GYYaD2i49aVSsYScaHvt30-11ZLzLbZ8tSSjt1f6xzv7YHOBVtPHcHRL1N50H5EX41e5TkwQUDZ-5fOdyWC8Tu0Jnb6vj6qsT6bdbxkSdK0wQIcCWeaX3J5nuLXDyZtLFA_4dPChOU");'>
+<div class="flex items-end justify-between gap-4 p-4 text-white">
+<p class="text-2xl font-bold">What is the capital of France?</p>
+<button class="bg-primary text-white rounded-lg h-10 px-6 text-sm font-bold whitespace-nowrap">
+                Show Answer
+              </button>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 h-12 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white font-bold">Previous</button>
+<button class="flex-1 h-12 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white font-bold">Next</button>
+</div>
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Difficulty</h2>
+<div class="flex rounded-lg bg-slate-200 dark:bg-slate-800 p-1">
+<label class="flex-1 h-10 flex items-center justify-center cursor-pointer rounded-md has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:text-slate-900 has-[:checked]:dark:text-white text-slate-500 dark:text-slate-400 font-medium text-sm">
+<input class="sr-only" name="difficulty" type="radio" value="Easy"/>
+<span>Easy</span>
+</label>
+<label class="flex-1 h-10 flex items-center justify-center cursor-pointer rounded-md has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:text-slate-900 has-[:checked]:dark:text-white text-slate-500 dark:text-slate-400 font-medium text-sm">
+<input checked="" class="sr-only" name="difficulty" type="radio" value="Medium"/>
+<span>Medium</span>
+</label>
+<label class="flex-1 h-10 flex items-center justify-center cursor-pointer rounded-md has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:text-slate-900 has-[:checked]:dark:text-white text-slate-500 dark:text-slate-400 font-medium text-sm">
+<input class="sr-only" name="difficulty" type="radio" value="Hard"/>
+<span>Hard</span>
+</label>
+</div>
+</div>
+</main>
+</div>
+<nav class="sticky bottom-0 bg-background-light dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800 pt-2 pb-4">
+<div class="flex justify-around items-start">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="text-xs font-medium">My Decks</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-xs font-medium">Create</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-xs font-medium">Study</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-xs font-medium">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+
+</body></html>

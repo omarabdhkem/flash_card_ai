@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy AI Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col h-screen">
+<header class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 fixed top-0 left-0 right-0 z-10">
+<button class="text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined"> arrow_back_ios_new </span>
+</button>
+<h1 class="text-lg font-bold text-gray-900 dark:text-white">Quizzy AI</h1>
+<div class="w-8"></div>
+</header>
+<main class="flex-1 overflow-y-auto pt-20 pb-24 px-4">
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-3 max-w-lg">
+<div class="w-10 h-10 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCD_rqnihziLOC1SSPSnW0_0acB_2dip16yQA6fExdYP0sEfJhuhyljBPA-LoEtUvJsth_qNt0VrsGa5Bz6AjxwUyYHkW_5H35A6kA7fDn22uVPYGwnQ4M8HPl-GPOE4Y-m7vfa_Xm3Pq_erV_Rl7edQh1ysCPCtuDek0KcEv-ezVcje-QbDMTMkRSdjzo6Wy8BFim0KYzlbDV8XguzpJPwX1r6FZxnnbS8Qj_OAIZL9FNYZuI20FrVYho8Saz1U60BSEb4mMMu2C4");'></div>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-gray-500 dark:text-gray-400">Quizzy AI</p>
+<div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg rounded-tl-none">
+<p class="text-gray-800 dark:text-gray-200">Hello there! I'm here to help you with any questions you have about your course material. Feel free to ask me anything, and I'll do my best to provide clear and helpful answers.</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3 max-w-lg ml-auto justify-end">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-sm text-gray-500 dark:text-gray-400">You</p>
+<div class="bg-primary text-white p-3 rounded-lg rounded-tr-none">
+<p>Can you explain the main causes of the First World War?</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="relative flex-1">
+<input class="w-full h-12 px-4 pr-12 bg-gray-100 dark:bg-gray-800 border-none rounded-full focus:ring-2 focus:ring-primary text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="Ask me anything..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined"> image </span>
+</button>
+</div>
+<button class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined"> send </span>
+</button>
+</div>
+</footer>
+</div>
+
+</body></html>

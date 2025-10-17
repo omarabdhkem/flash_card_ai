@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quizzy - إنشاء حساب</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="w-full">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-2">
+<svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">Quizzy</h1>
+</div>
+<div class="flex items-center space-x-4">
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">الرئيسية</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">المميزات</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">الأسعار</a>
+</nav>
+<button class="px-4 py-2 text-sm font-bold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              تسجيل الدخول
+            </button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<div>
+<h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            أنشئ حسابك الجديد
+          </h2>
+<p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+            وابدأ رحلتك التعليمية مع Quizzy
+          </p>
+</div>
+<form action="#" class="mt-8 space-y-6" method="POST">
+<input name="remember" type="hidden" value="true"/>
+<div class="rounded-lg shadow-sm -space-y-px">
+<div>
+<label class="sr-only" for="name">الاسم</label>
+<input class="appearance-none rounded-t-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="name" name="name" placeholder="الاسم الكامل" required="" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="email-address">البريد الإلكتروني</label>
+<input autocomplete="email" class="appearance-none relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="email-address" name="email" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">كلمة المرور</label>
+<input autocomplete="current-password" class="appearance-none rounded-b-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="password" name="password" placeholder="كلمة المرور" required="" type="password"/>
+</div>
+</div>
+<div>
+<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark" type="submit">
+              إنشاء حساب
+            </button>
+</div>
+</form>
+<div class="text-center">
+<p class="text-sm text-gray-600 dark:text-gray-400">
+            لديك حساب بالفعل؟
+            <a class="font-medium text-primary hover:text-primary/90" href="#">
+              تسجيل الدخول
+            </a>
+</p>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

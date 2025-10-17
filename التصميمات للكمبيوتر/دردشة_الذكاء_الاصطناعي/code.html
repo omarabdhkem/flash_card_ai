@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Quizzy - AI Chat</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Space+Grotesk:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex h-screen w-full flex-col">
+<header class="flex h-16 shrink-0 items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6">
+<div class="flex items-center gap-3">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-lg">school</span>
+</div>
+<h1 class="text-xl font-bold text-slate-900 dark:text-white">Quizzy</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 lg:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkSgG-5Rh_2LxhiLhtrV3Ge1bfHL4Jb_pm8G3rzDwsJZeSdkbOG9wv74b_eW8r7q1UEHaCCVKV1_OEu2-Z0AncDRIp8KOQJ5mociuBxUgyza-obXf0LQnmVk0z78IdGGhA-AYltXcMna9Sbw31vYVcye6RhMSmciEpQUlFCVBKMkhrlRtr9n5TxlB4Nm2_8bEkfDCkCJBwgXuDMLpWHpxKGD7UaWWw0JRmr3OSUxix0t5pmNsU3nQb4Yin8i1ep2Bl8TlH2XgNnfM");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="hidden w-80 flex-col border-r border-slate-200 dark:border-slate-800 p-4 lg:flex">
+<h2 class="text-lg font-bold px-2 pb-2 text-slate-900 dark:text-white">Chats</h2>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 dark:bg-primary/20 px-3 py-2 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">forum</span>
+                        Calculus
+                    </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">science</span>
+                        Physics
+                    </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">biotech</span>
+                        Chemistry
+                    </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">genetics</span>
+                        Biology
+                    </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+                        History
+                    </a>
+</nav>
+</aside>
+<main class="flex flex-1 flex-col">
+<div class="flex-1 overflow-y-auto p-6">
+<div class="mx-auto max-w-4xl space-y-8">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSHd0EJXCNjc6OubgTynzzSv0FkNCqpDYIsMgfYDjG9L1V6YlVZ2dwxDepVHcRbcd4VRNCjWgqjA07oOlRqX_7Mhvb2JSqPQWPapAi8kjb8MXjqhjbhbM4j_db22eWWYPKWhdt1sh7mSBYDQ6j9Y1Sws5G2s-geDkOjwtJQ0Pv-fFC4o_TJCNBYGZeqI_Qsf3YYcLGBQoMKWnwMlBV9iBwr5XNLlyNcTUs3ItnkPLDG5yd03rVzUrLzXzoJ5Qd73L9hBQkFYh622Y");'></div>
+<div class="flex flex-col gap-1">
+<p class="font-bold text-slate-700 dark:text-slate-300">Quizzy</p>
+<div class="rounded-lg rounded-tl-none bg-slate-100 dark:bg-slate-800 p-4 max-w-lg">
+<p class="text-slate-800 dark:text-slate-200">Hi there! I'm Quizzy, your AI study assistant. Ask me anything about your courses, and I'll do my best to help you understand the material.</p>
+</div>
+</div>
+</div>
+<div class="flex items-start justify-end gap-4">
+<div class="flex flex-col gap-1 items-end">
+<p class="font-bold text-slate-700 dark:text-slate-300">Sarah</p>
+<div class="rounded-lg rounded-tr-none bg-primary p-4 max-w-lg">
+<p class="text-white">What are the key concepts in calculus?</p>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEmvDdYxSOGre_Sct6FFRMtaWS-mi2V_FVDRlvFEDtaMXszwK03HpRL5hInkKF_OM0-TKZYwgWYOocT8poZ-BjGAOH4ruWAogK3a_gUHo-TfB_x2mXOlimds8hEJTIgie3kS-74C9N4z4LYwzMR-FRNiY_SIivu8DcJC8-KZMIXN_umvfbf0cs0KI2Hg-Cqu9RnKrXKKXZ6XV4l36JlLZTwEUk5y53OJZscVokmpRriaRvB3b9dTYILlpjf0N7tsTVRy05_d2OHXU");'></div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYvSxDQC9aEzRYBmcxtOttn1Ygff7sI7kF33rXxMy_RTK3kzj-OImB98F5Q1UhPwbYzasiqSTvGMEvfFN2TCmsjKWb_fjDPAegQZKICAj9t-E-iqmYVPOslKE6SY9gOeD8c5BTlz1ytUrHEaZxuQAxdchw47cQeyRoiZN23bQrJmfIfbQJhIjo4nlPMKBgzropeUK_Zkdghb6ZMBPNGzBKUswtCw-fSkahkhmUreUqOMpeAXtHYJ7x2wQRdAzeIyEO5kz_WS3FIhU");'></div>
+<div class="flex flex-col gap-1">
+<p class="font-bold text-slate-700 dark:text-slate-300">Quizzy</p>
+<div class="rounded-lg rounded-tl-none bg-slate-100 dark:bg-slate-800 p-4 max-w-lg">
+<p class="text-slate-800 dark:text-slate-200">Calculus involves concepts like limits, derivatives, and integrals. These are used to analyze rates of change and accumulation of quantities. Would you like a more detailed explanation of any of these?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 p-4">
+<div class="mx-auto max-w-4xl">
+<form class="relative">
+<input class="form-input w-full rounded-lg border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 py-3 pl-4 pr-12 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary" placeholder="Ask a question..." type="text"/>
+<button class="absolute inset-y-0 right-0 flex items-center justify-center px-4 text-slate-500 hover:text-primary" type="submit">
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
